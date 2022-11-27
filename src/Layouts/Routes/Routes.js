@@ -64,10 +64,10 @@ export const router = createBrowserRouter([
                 path: "/dashboard",
                 element: <MyBooking />
             },
-            // {
-            //     path: "/dashboard/allusers",
-            //     element: <AdminRoutes><AllUsers></AllUsers></AdminRoutes>
-            // }
+            {
+                path: "/dashboard/allusers",
+                element: <AdminRoutes><AllUsers></AllUsers></AdminRoutes>
+            }
         ]
     }
 

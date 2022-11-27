@@ -57,11 +57,11 @@ const AllUsers = () => {
                     <table className="table w-full">
                         <thead>
                             <tr>
-                                <th></th>
+                                {/* <th></th>
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Add Seller </th>
-                                <th>Delete </th>
+                                <th>Delete </th> */}
                             </tr>
                         </thead>
                         <tbody>
