@@ -2,6 +2,7 @@ import AllUsers from "../../Dashbord/DasboardLayouts/AllUsers";
 import DasboardLayouts from "../../Dashbord/DasboardLayouts/DasboardLayouts";
 import MyBooking from "../../Dashbord/DasboardLayouts/MyBooking";
 import Dashboard from "../../Dashbord/Dashboard";
+import Error from "../../Error/Error";
 import Blog from "../../Pages/Blog/Blog";
 import Category from "../../Pages/Home/Category";
 import Home from "../../Pages/Home/Home";
@@ -20,6 +21,7 @@ export const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <Error />,
         children: [
 
             {
