@@ -11,7 +11,7 @@ const AllUsers = () => {
 
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/users');
+            const res = await fetch('https://assignment-12-server-site-pink.vercel.app/users');
             const data = await res.json();
             return data;
         }
@@ -22,7 +22,7 @@ const AllUsers = () => {
 
     /* ------------hanlde Add to Admin------ */
     const hanldeAdmin = id => {
-        fetch(`http://localhost:5000/users/admin/${id}`, {
+        fetch(`https://assignment-12-server-site-pink.vercel.app/users/admin/${id}`, {
             method: 'PUT',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -46,7 +46,7 @@ const AllUsers = () => {
 
             </div>
             <div>
-                <h2 className="text-3xl"> All User</h2>
+                <h2 className="text-3xl"> All Seller</h2>
             </div>
 
 
@@ -57,11 +57,11 @@ const AllUsers = () => {
                     <table className="table w-full">
                         <thead>
                             <tr>
-                                {/* <th></th>
+                                <th></th>
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Add Seller </th>
-                                <th>Delete </th> */}
+                                <th>Delete </th>
                             </tr>
                         </thead>
                         <tbody>

@@ -32,7 +32,7 @@ const BookingPhoneModal = ({ bookProducts, setBookProducts }) => {
             date
         }
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://assignment-12-server-site-pink.vercel.app/bookings', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

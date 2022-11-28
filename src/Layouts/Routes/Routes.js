@@ -1,3 +1,4 @@
+import AddProducts from "../../Dashbord/AddProducts";
 import AllUsers from "../../Dashbord/DasboardLayouts/AllUsers";
 import DasboardLayouts from "../../Dashbord/DasboardLayouts/DasboardLayouts";
 import MyBooking from "../../Dashbord/DasboardLayouts/MyBooking";
@@ -49,7 +50,7 @@ export const router = createBrowserRouter([
             {
                 path: '/products/:id',
                 element: <Products></Products>,
-                loader: ({ params }) => fetch(`http://localhost:5000/phone/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-12-server-site-pink.vercel.app/phone/${params.id}`)
             }
 
         ]
@@ -67,6 +68,10 @@ export const router = createBrowserRouter([
             {
                 path: "/dashboard/allusers",
                 element: <AdminRoutes><AllUsers></AllUsers></AdminRoutes>
+            },
+            {
+                path: "/dashboard/addProducts",
+                element: <AdminRoutes> <AddProducts></AddProducts> </AdminRoutes>
             }
         ]
     }

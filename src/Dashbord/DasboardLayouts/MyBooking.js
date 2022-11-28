@@ -8,7 +8,7 @@ const MyBooking = () => {
 
 
 
-    const url = `http://localhost:5000/bookings?email=${user?.email}`;
+    const url = `https://assignment-12-server-site-pink.vercel.app/bookings?email=${user?.email}`;
 
     const { data: bookings = [] } = useQuery({
         queryKey: ['bookings', user?.email],
@@ -42,7 +42,6 @@ const MyBooking = () => {
                                 <th>Phone</th>
                                 <th>location</th>
                                 <th>Date</th>
-
                                 <th>Payment</th>
                             </tr>
                         </thead>
@@ -50,8 +49,6 @@ const MyBooking = () => {
                             {
                                 bookings &&
                                 bookings?.map((booked, i) => <tr>
-
-
                                     <td>{i + 1} </td>
                                     <td>{booked.name} </td>
                                     <td>{booked.email} </td>

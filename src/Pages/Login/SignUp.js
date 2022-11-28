@@ -52,7 +52,7 @@ const SignUp = () => {
     const saveUser = (name, email, role) => {
 
         const user = { name, email, role };
-        fetch('http://localhost:5000/users', {
+        fetch('https://assignment-12-server-site-pink.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -70,7 +70,7 @@ const SignUp = () => {
     //* -------accessToken ----------------
 
     // const getUserToken = email => {
-    //     fetch(`http://localhost:5000/jwt?email=${email}`)
+    //     fetch(`https://assignment-12-server-site-pink.vercel.app/jwt?email=${email}`)
     //         .then(res => res.json())
     //         .then(data => {
     //             if (data.accessToken) {
@@ -165,7 +165,11 @@ const SignUp = () => {
                     </form>
 
                     <p className='mb-5'> Already have an account please  <Link className=' text-info font-bold ' to="/login"> Login</Link>   </p>
+                    <div className="divider">OR</div>
+                    <button className='btn btn-primary w-full'>CONTINUE WITH GOOGLE</button>
+
                 </div>
+
             </div>
         </div>
     );
