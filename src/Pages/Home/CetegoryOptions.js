@@ -14,7 +14,7 @@ const CetegoryOptions = ({ category }) => {
                 <div className="card-body items-center text-center">
                     <h2 className="card-title">{category.name} </h2>
                     <div className="card-actions justify-end">
-                        <Link to={`/products/${category._id}`}> <button className="btn btn-primary btn-sm">Buy now</button></Link>
+                        <Link to={`/products/${category._id}`}> <button className="btn btn-primary btn-sm">Buy Now</button></Link>
                     </div>
                 </div>
             </div>
