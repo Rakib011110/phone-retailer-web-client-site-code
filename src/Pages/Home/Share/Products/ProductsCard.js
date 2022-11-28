@@ -13,12 +13,12 @@ const ProductsCard = ({ product, setBookProducts }) => {
                         <div className="badge badge-secondary">{product.brands.price} </div>
                     </h2>
                     <p>{product.details.slice(0, 200)}</p>
-                    {/* <div className="card-actions justify-end">
+                    <div className="card-actions justify-end">
                         <label onClick={() => setBookProducts(product)} htmlFor="booking-modal" className="badge badge-outline btn btn-sm btn-primary">Book Now </label>
 
 
 
-                    </div> */}
+                    </div>
                 </div>
             </div>
         </div>
