@@ -2,7 +2,7 @@ import CetegoryOptions from './CetegoryOptions';
 import { useQuery } from '@tanstack/react-query';
 
 const Category = () => {
-    const { data: categories = [], refetch } = useQuery({
+    const { data: categories = [] } = useQuery({
         queryKey: ['categories'],
         queryFn: async () => {
             const res = await fetch('https://assignment-12-server-site-pink.vercel.app/phone-category');
