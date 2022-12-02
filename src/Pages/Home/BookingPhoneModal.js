@@ -67,10 +67,10 @@ const BookingPhoneModal = ({ bookProducts, setBookProducts }) => {
 
                     <div className="">
                         <div className="w-16 rounded">
-                            <img src={bookProducts.brands.img} alt='' />
+                            <img src={bookProducts.img} alt='' />
                         </div>
                     </div>
-                    <h3 className="text-lg font-bold center mb-5">{bookProducts.brands.name}</h3>
+                    <h3 className="text-lg font-bold center mb-5">{bookProducts.name}</h3>
 
                     <form onSubmit={handleBooking} action="" className='grid grid-cols-1 gap-3'>
 
@@ -78,11 +78,11 @@ const BookingPhoneModal = ({ bookProducts, setBookProducts }) => {
 
 
 
-                        <input name='productsName' disabled value={bookProducts.brands.name} type="text" placeholder="Your Name" className="input input-bordered input-primary w-full " />
+                        <input name='productsName' disabled value={bookProducts.name} type="text" placeholder="Your Name" className="input input-bordered input-primary w-full " />
 
-                        <input name='date' disabled value={bookProducts.brands.published_date} type="text" placeholder="Your Name" className="input input-bordered input-primary w-full " />
+                        <input name='date' disabled value={bookProducts.published_date} type="text" placeholder="Your Name" className="input input-bordered input-primary w-full " />
 
-                        <input name='price' disabled value={` Price $${bookProducts.brands.price}`} className="input input-bordered input-primary w-full " />
+                        <input name='price' disabled value={` Price $${bookProducts.price}`} className="input input-bordered input-primary w-full " />
 
 
 

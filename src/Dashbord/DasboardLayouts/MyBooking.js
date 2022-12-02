@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import HomeBanner from '../../Pages/Home/Share/HomeBanner';
 
@@ -55,7 +56,18 @@ const MyBooking = () => {
                                     <td>{booked.phone} </td>
                                     <td>{booked.location} </td>
                                     <td>{booked.date}</td>
-                                    <td >  <button className='btn btn-sm btn-primary'>Payment</button> </td>
+                                    <td>
+                                        {
+                                            booked?.price && !booked?.paid &&
+                                            <Link to={`/dashboard/payment/${booked._id}`}>
+                                                <button
+                                                    className='btn btn-primary btn-sm'>Pay Now</button>
+                                            </Link>
+                                        }
+                                        {
+                                            booked.price && booked.paid && <span className=' text-green-500 font-bold'>Paid</span>
+                                        }
+                                    </td>
 
                                 </tr>)
                             }

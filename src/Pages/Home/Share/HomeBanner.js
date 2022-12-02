@@ -31,13 +31,9 @@ const HomeBanner = () => {
 
     return (
         <div className="carousel w-2/2 md:w-full lg:w-full  py-10">
-
             {
-
                 bannerData.map(slide => <HomeSlider slide={slide} key={slide.id}> </HomeSlider>)
             }
-
-
             <div>
 
             </div>

@@ -7,7 +7,7 @@ import useToken from '../../hooks/useToken';
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [data, setData] = useState("");
-    const { signIn } = useContext(AuthContext);
+    const { signIn, googleSignIn } = useContext(AuthContext);
 
     const [loginError, setLoginError] = useState('');
     const [loginUserEmail, setLoginUserEmail] = useState('');
@@ -40,6 +40,18 @@ const Login = () => {
             });
 
     }
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+
+            .then(result => {
+                const user = result.user
+                console.log(user);
+                navigate('/')
+            })
+            .then(err => console.error(err))
+    }
+
 
 
 
@@ -94,7 +106,10 @@ const Login = () => {
 
 
                         <p className='mb-5'> Dont't Have Any Acccount Please  <Link className=' text-info font-bold ' to="/signup">  Register</Link>   </p>
+                        <div className="divider">OR</div>
+                        <button onClick={handleGoogleSignIn} className='btn btn-primary w-full'>CONTINUE WITH GOOGLE</button>
                     </div>
+
 
                 </div>
             </div>

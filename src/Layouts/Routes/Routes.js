@@ -2,6 +2,7 @@ import AddProducts from "../../Dashbord/AddProducts";
 import AllUsers from "../../Dashbord/DasboardLayouts/AllUsers";
 import DasboardLayouts from "../../Dashbord/DasboardLayouts/DasboardLayouts";
 import MyBooking from "../../Dashbord/DasboardLayouts/MyBooking";
+import MyProducts from "../../Dashbord/DasboardLayouts/MyProducts";
 import Dashboard from "../../Dashbord/Dashboard";
 import Error from "../../Error/Error";
 import Blog from "../../Pages/Blog/Blog";
@@ -71,7 +72,13 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/dashboard/addProducts",
-                element: <AdminRoutes> <AddProducts></AddProducts> </AdminRoutes>
+                element: <AddProducts></AddProducts>
+            },
+            {
+                path: "/dashboard/myproduct",
+                element: <MyProducts></MyProducts>,
+
+
             }
         ]
     }

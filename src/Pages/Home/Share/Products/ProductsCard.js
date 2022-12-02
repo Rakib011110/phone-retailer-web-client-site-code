@@ -9,8 +9,8 @@ const ProductsCard = ({ product, setBookProducts }) => {
                 } alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">
-                        {product.brands.name}
-                        <div className="badge badge-secondary">{product.brands.price} </div>
+                        {product.name}
+                        <div className="badge badge-secondary">{product.price} </div>
                     </h2>
                     <p>{product.details.slice(0, 200)}</p>
                     <div className="card-actions justify-end">

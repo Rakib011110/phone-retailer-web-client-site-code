@@ -10,7 +10,7 @@ const SignUp = () => {
     const [signUpError, setSignUPError] = useState('');
     const navigate = useNavigate();
     const [createdUserEmail, setCreatedUserEmail] = useState('')
-    const { createUser, updateUser } = useContext(AuthContext)
+    const { createUser, updateUser, googleSignIn } = useContext(AuthContext)
 
 
 
@@ -47,6 +47,9 @@ const SignUp = () => {
             .catch(error => console.error(error))
     }
 
+
+
+
     // *---------saveUser--------------------------
 
     const saveUser = (name, email, role) => {
@@ -67,25 +70,22 @@ const SignUp = () => {
 
             })
     }
-    //* -------accessToken ----------------
-
-    // const getUserToken = email => {
-    //     fetch(`https://assignment-12-server-site-pink.vercel.app/jwt?email=${email}`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             if (data.accessToken) {
-
-    //                 localStorage.setItem('', data.accessToken)
-    //                 navigate('/')
-
-    //             }
-
-    //         })
 
 
-    // }
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+
+            .then(result => {
+                const user = result.user;
+                saveUser(user.displayName, user.email, "Buyer");
 
 
+                setCreatedUserEmail(user.email);
+
+            })
+            .then(err => console.error(err))
+    }
 
 
 
@@ -136,13 +136,10 @@ const SignUp = () => {
                         <div className="form-control w-full max-w-xs">
                             <label className="label"> <span className="label-text">Role</span></label>
                             <select
-                                {...register('role', { required: 'select your position' })}
-
+                                {...register("role")}
                                 className="select input-bordered w-full max-w-xs">
-                                <option disabled selected>{ }</option>
-                                <option >user</option>
-                                <option>seller</option>
-
+                                <option defaultValue={"Buyer"}>Buyer</option>
+                                <option>Seller</option>
 
                             </select>
                             {errors.role && <p className='text-red-600'> {errors.role.message}</p>}
@@ -166,7 +163,7 @@ const SignUp = () => {
 
                     <p className='mb-5'> Already have an account please  <Link className=' text-info font-bold ' to="/login"> Login</Link>   </p>
                     <div className="divider">OR</div>
-                    <button className='btn btn-primary w-full'>CONTINUE WITH GOOGLE</button>
+                    <button onClick={handleGoogleSignIn} className='btn btn-primary w-full'>CONTINUE WITH GOOGLE</button>
 
                 </div>
 
